@@ -5,17 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index - Fantaji</title>
+    <title>Characters - Fantaji</title>
 </head>
 
 <body>
+    <h1>Characters</h1>
     <div>
-        <h1>Fantaji</h1>
-        <p>Design your own world!</p>
+        <a href="">Add a new Character</a>
     </div>
     <div>
         <ul>
-            <li><a href="/characters">Characters</a></li>
+            <% for (let character of characters) { %>
+            <li><a href=""><%= character.name %> - The <%= character.class %></a></li>
+            <% } %>
         </ul>
     </div>
 </body>

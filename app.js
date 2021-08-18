@@ -29,6 +29,11 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
+app.get('/characters', async (req, res) => {
+    const characters = await Character.find({});
+    res.render('characters/index', { characters });
+});
+
 app.listen(8080, () => {
     console.log('Serving on port 8080');
 });
