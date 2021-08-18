@@ -16,7 +16,7 @@
     <div>
         <ul>
             <% for (let character of characters) { %>
-            <li><a href=""><%= character.name %> - The <%= character.class %></a></li>
+            <li><a href="/characters/<%= character._id %>"><%= character.name %> - The <%= character.class %></a></li>
             <% } %>
         </ul>
     </div>

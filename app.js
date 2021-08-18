@@ -41,7 +41,12 @@ app.get('/characters/new', (req, res) => {
 app.post('/characters', async (req, res) => {
     const character = new Character(req.body.character);
     await character.save();
-    res.redirect('/characters');
+    res.redirect(`/characters/${character._id}`);
+})
+
+app.get('/characters/:id', async (req, res) => {
+    const character = await Character.findById(req.params.id);
+    res.render('characters/show', { character });
 })
 
 app.listen(8080, () => {
