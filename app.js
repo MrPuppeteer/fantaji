@@ -58,6 +58,12 @@ app.put('/characters/:id', async (req, res) => {
     const { id } = req.params;
     const character = await Character.findByIdAndUpdate(id, { ...req.body.character });
     res.redirect(`/characters/${character._id}`);
+});
+
+app.delete('/characters/:id', async (req, res) => {
+    const { id } = req.params;
+    await Character.findByIdAndDelete(id);
+    res.redirect('/characters');
 })
 
 app.listen(8080, () => {

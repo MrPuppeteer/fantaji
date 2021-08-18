@@ -20,6 +20,9 @@
         </ul>
     </div>
     <a href="/characters/<%= character._id %>/edit">Edit Character</a>
+    <form action="/characters/<%= character._id %>?_method=DELETE" method="POST">
+        <button>Delete</button>
+    </form>
     <a href="/characters">Characters</a>
 </body>
 
