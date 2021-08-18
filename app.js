@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
+const Character = require('./models/character');
 
 mongoose.connect('mongodb://localhost:27017/fantaji', {
     useNewUrlParser: true,
@@ -25,7 +26,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 
 app.get('/', (req, res) => {
-    res.send('Index');
+    res.render('index');
 });
 
 app.listen(8080, () => {
