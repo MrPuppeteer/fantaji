@@ -34,6 +34,16 @@ app.get('/characters', async (req, res) => {
     res.render('characters/index', { characters });
 });
 
+app.get('/characters/new', (req, res) => {
+    res.render('characters/new');
+})
+
+app.post('/characters', async (req, res) => {
+    const character = new Character(req.body.character);
+    await character.save();
+    res.redirect('/characters');
+})
+
 app.listen(8080, () => {
     console.log('Serving on port 8080');
 });

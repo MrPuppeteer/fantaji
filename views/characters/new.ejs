@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New character - Fantaji</title>
+</head>
+
+<body>
+    <h1>Create a New Character</h1>
+    <form action="/characters" method="POST">
+        <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="character[name]">
+        </div>
+        <div>
+            <label for="race">Race</label>
+            <input type="text" id="race" name="character[race]">
+        </div>
+        <div>
+            <label for="class">Class</label>
+            <input type="text" id="class" name="character[class]">
+        </div>
+        <div>
+            <label for="alignment">Alignment</label>
+            <input type="text" id="alignment" name="character[alignment]">
+        </div>
+        <div>
+            <label for="equipments">Equipment</label>
+            <input type="text" id="equipments" name="character[equipments]">
+        </div>
+        <button>Create</button>
+    </form>
+    <a href="/characters">Characters</a>
+</body>
+
+</html>
