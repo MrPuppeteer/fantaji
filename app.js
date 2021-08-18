@@ -36,17 +36,28 @@ app.get('/characters', async (req, res) => {
 
 app.get('/characters/new', (req, res) => {
     res.render('characters/new');
-})
+});
 
 app.post('/characters', async (req, res) => {
     const character = new Character(req.body.character);
     await character.save();
     res.redirect(`/characters/${character._id}`);
-})
+});
 
 app.get('/characters/:id', async (req, res) => {
     const character = await Character.findById(req.params.id);
     res.render('characters/show', { character });
+});
+
+app.get('/characters/:id/edit', async (req, res) => {
+    const character = await Character.findById(req.params.id);
+    res.render('characters/edit', { character });
+});
+
+app.put('/characters/:id', async (req, res) => {
+    const { id } = req.params;
+    const character = await Character.findByIdAndUpdate(id, { ...req.body.character });
+    res.redirect(`/characters/${character._id}`);
 })
 
 app.listen(8080, () => {
