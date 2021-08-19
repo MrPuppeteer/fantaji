@@ -1,39 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New character - Fantaji</title>
-</head>
-
-<body>
-    <h1>Create a New Character</h1>
-    <form action="/characters" method="POST">
-        <div>
-            <label for="name">Name</label>
-            <input type="text" id="name" name="character[name]">
-        </div>
-        <div>
-            <label for="race">Race</label>
-            <input type="text" id="race" name="character[race]">
-        </div>
-        <div>
-            <label for="class">Class</label>
-            <input type="text" id="class" name="character[class]">
-        </div>
-        <div>
-            <label for="alignment">Alignment</label>
-            <input type="text" id="alignment" name="character[alignment]">
-        </div>
-        <div>
-            <label for="equipments">Equipment</label>
-            <input type="text" id="equipments" name="character[equipments]">
-        </div>
-        <button>Create</button>
-    </form>
-    <a href="/characters">Characters</a>
-</body>
-
-</html>
+<% layout('layouts/boilerplate') %>
+<div class="row mb-3">
+    <h1 class="text-center">Create a New Character</h1>
+    <div class="col-6 offset-3">
+        <form action="/characters" method="POST">
+            <div class="mb-3">
+                <label class="form-label" for="name">Name</label>
+                <input class="form-control" type="text" id="name" name="character[name]">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="race">Race</label>
+                <input class="form-control" type="text" id="race" name="character[race]">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="class">Class</label>
+                <input class="form-control" type="text" id="class" name="character[class]">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="alignment">Alignment</label>
+                <input class="form-control" type="text" id="alignment" name="character[alignment]">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="equipments">Equipment</label>
+                <input class="form-control" type="text" id="equipments" name="character[equipments]">
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-success">Create</button>
+                <a class="btn btn-danger" href="/characters">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>

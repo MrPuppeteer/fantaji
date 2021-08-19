@@ -1,39 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
+<% layout('layouts/boilerplate') %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit character - Fantaji</title>
-</head>
-
-<body>
-    <h1>Edit Character</h1>
-    <form action="/characters/<%= character._id %>?_method=PUT" method="POST">
-        <div>
-            <label for="name">Name</label>
-            <input type="text" id="name" name="character[name]" value="<%= character.name %>">
-        </div>
-        <div>
-            <label for="race">Race</label>
-            <input type="text" id="race" name="character[race]" value="<%= character.race %>">
-        </div>
-        <div>
-            <label for="class">Class</label>
-            <input type="text" id="class" name="character[class]" value="<%= character.class %>">
-        </div>
-        <div>
-            <label for="alignment">Alignment</label>
-            <input type="text" id="alignment" name="character[alignment]" value="<%= character.alignment %>">
-        </div>
-        <div>
-            <label for="equipments">Equipment</label>
-            <input type="text" id="equipments" name="character[equipments]" value="<%= character.equipments[0] %>">
-        </div>
-        <button>Edit</button>
-    </form>
-    <a href="/characters/<%= character._id %>">Cancel</a>
-</body>
-
-</html>
+<div class="row mb-3">
+    <h1 class="text-center">Edit Character</h1>
+    <div class="col-6 offset-3">
+        <form action="/characters/<%= character._id %>?_method=PUT" method="POST">
+            <div class="mb-3">
+                <label class="form-label" for="name">Name</label>
+                <input class="form-control" type="text" id="name" name="character[name]" value="<%= character.name %>">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="race">Race</label>
+                <input class="form-control" type="text" id="race" name="character[race]" value="<%= character.race %>">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="class">Class</label>
+                <input class="form-control" type="text" id="class" name="character[class]"
+                    value="<%= character.class %>">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="alignment">Alignment</label>
+                <input class="form-control" type="text" id="alignment" name="character[alignment]"
+                    value="<%= character.alignment %>">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="equipments">Equipment</label>
+                <input class="form-control" type="text" id="equipments" name="character[equipments]"
+                    value="<%= character.equipments[0] %>">
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-success">Edit</button>
+                <a class="btn btn-danger" href="/characters/<%= character._id %>">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
