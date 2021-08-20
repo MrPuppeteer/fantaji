@@ -3,28 +3,30 @@
 <div class="row mb-3">
     <h1 class="text-center">Edit Character</h1>
     <div class="col-6 offset-3">
-        <form action="/characters/<%= character._id %>?_method=PUT" method="POST">
+        <form action="/characters/<%= character._id %>?_method=PUT" method="POST" novalidate class="validated-form">
             <div class="mb-3">
                 <label class="form-label" for="name">Name</label>
-                <input class="form-control" type="text" id="name" name="character[name]" value="<%= character.name %>">
+                <input class="form-control" type="text" id="name" name="character[name]" value="<%= character.name %>"
+                    required>
             </div>
             <div class="mb-3">
                 <label class="form-label" for="race">Race</label>
-                <input class="form-control" type="text" id="race" name="character[race]" value="<%= character.race %>">
+                <input class="form-control" type="text" id="race" name="character[race]" value="<%= character.race %>"
+                    required>
             </div>
             <div class="mb-3">
                 <label class="form-label" for="class">Class</label>
                 <input class="form-control" type="text" id="class" name="character[class]"
-                    value="<%= character.class %>">
+                    value="<%= character.class %>" required>
             </div>
             <div class="mb-3">
                 <label class="form-label" for="alignment">Alignment</label>
                 <input class="form-control" type="text" id="alignment" name="character[alignment]"
-                    value="<%= character.alignment %>">
+                    value="<%= character.alignment %>" required>
             </div>
             <div class="mb-3">
                 <label class="form-label" for="equipments">Equipment</label>
-                <input class="form-control" type="text" id="equipments" name="character[equipments]"
+                <input class="form-control" type="text" id="equipments" name="character[equipments][]"
                     value="<%= character.equipments[0] %>">
             </div>
             <div class="mb-3">
