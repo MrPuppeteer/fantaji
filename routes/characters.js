@@ -32,18 +32,18 @@ router.post('/', validateCharacter, catchAsync(async (req, res) => {
 
 router.get('/:id', catchAsync(async (req, res) => {
     const character = await Character.findById(req.params.id);
-    if (!campground) {
+    if (!character) {
         req.flash('error', 'Cannot find the character!');
-        return res.redirect('/campgrounds');
+        return res.redirect('/characters');
     }
     res.render('characters/show', { character });
 }));
 
 router.get('/:id/edit', catchAsync(async (req, res) => {
     const character = await Character.findById(req.params.id);
-    if (!campground) {
+    if (!character) {
         req.flash('error', 'Cannot find the character!');
-        return res.redirect('/campgrounds');
+        return res.redirect('/characters');
     }
     res.render('characters/edit', { character });
 }));
